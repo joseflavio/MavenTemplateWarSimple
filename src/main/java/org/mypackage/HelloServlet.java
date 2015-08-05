@@ -21,7 +21,11 @@ public class HelloServlet extends HttpServlet {
 
         // Actual logic goes here.
         PrintWriter out = response.getWriter();
-        out.println("<h1>Hello world! I'm alive!</h1>");
+        out.println("<h1>" + getText() + "</h1>");
+    }
+
+    protected String getText() {
+        return "Hello world! I'm alive!";
     }
 
 }

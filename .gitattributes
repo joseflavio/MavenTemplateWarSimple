@@ -1,0 +1,7 @@
+# Force Unix EOL
+* text eol=lf
+
+# Binary file extensions
+*.png binary
+*.jpg binary
+

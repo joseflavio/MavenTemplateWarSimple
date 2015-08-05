@@ -1,2 +1,8 @@
+# Eclipse local files
+.classpath
+.project
+.settings
+
+# Maven generate files
 target
 
