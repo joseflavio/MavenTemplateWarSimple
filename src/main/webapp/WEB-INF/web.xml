@@ -13,7 +13,6 @@
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 
-    <!-- Default page to serve -->
     <welcome-file-list>
         <welcome-file>static.html</welcome-file>
     </welcome-file-list>

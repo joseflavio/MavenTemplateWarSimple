@@ -10,9 +10,11 @@
 
 mvn jetty:run
 
- - Accessing the server: 
-    `http://localhost:8080/`
-    `http://localhost:8080/hello`
+ - Accessing the server:
+    `http://localhost:8080/MyWarName/`
+    `http://localhost:8080/MyWarName/hello`
+    `curl -X GET -d "any data" http://localhost:8080/MyWarName/hello`
+    `curl -X POST -d "any data" -u anyusername:cezamo http://localhost:8080/MyWarName/hello`
 
 ## Validating the code before compiling
 

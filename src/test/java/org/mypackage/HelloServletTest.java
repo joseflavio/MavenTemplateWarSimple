@@ -15,8 +15,8 @@ public class HelloServletTest {
     }
 
     @Test
-    public void testEmptyCollection() {
-        assertEquals(helloServlet.getText(), "Hello world! I'm alive!");
+    public void testDecodingHttpCredentials() {
+        assertEquals(helloServlet.decodeHttpCredentials("Basic YW55dXNlcm5hbWU6Y2V6YW1v"), "anyusername:cezamo");
         System.out.println("@Test - testEmptyCollection");
     }
 
