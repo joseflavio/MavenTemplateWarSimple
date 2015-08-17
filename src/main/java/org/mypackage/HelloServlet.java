@@ -1,6 +1,8 @@
 package org.mypackage;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 
@@ -10,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.codec.binary.Base64;
+
+import com.google.common.io.CharStreams;
 
 public class HelloServlet extends HttpServlet {
 
@@ -29,13 +33,19 @@ public class HelloServlet extends HttpServlet {
     public void doPost(final HttpServletRequest request, final HttpServletResponse response) throws ServletException,
             IOException {
 
+        String payload = null;
+        try (final InputStream is = request.getInputStream()) {
+            payload = CharStreams.toString(new InputStreamReader(is, StandardCharsets.UTF_8));
+        }
+
         String authorizationBase64 = request.getHeader("Authorization");
         String credentials = decodeHttpCredentials(authorizationBase64);
 
         response.setContentType("text/html");
 
         PrintWriter out = response.getWriter();
-        out.println("Hello POST method! I'm alive! credentials 2=" + credentials);
+        out.println("Hello POST method! I'm alive! credentials 2 = " + credentials);
+        out.println("payload = " + payload);
 
     }
 
