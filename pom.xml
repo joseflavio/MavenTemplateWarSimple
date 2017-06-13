@@ -11,7 +11,7 @@
         <downloadSources>true</downloadSources>
         <downloadJavadocs>true</downloadJavadocs>
         <!-- My properties -->
-        <javaVersion>1.7</javaVersion>
+        <javaVersion>1.8</javaVersion>
         <warName>MyWarName</warName>
     </properties>
     <!-- Dependencies -->
@@ -146,6 +146,18 @@
                                 </pluginExecution>
                             </pluginExecutions>
                         </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.tomcat.maven</groupId>
+                    <artifactId>tomcat7-maven-plugin</artifactId>
+                    <version>2.2</version>
+                    <configuration>
+                        <usernamee>tomcat_admin_script</usernamee>
+                        <password>password</password>
+                        <url>https://domain.com/manager/text</url>
+                        <server>TomcatServer</server>
+                        <path>/GiveMeAShow</path>
                     </configuration>
                 </plugin>
             </plugins>
